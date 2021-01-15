@@ -60,7 +60,7 @@ class Game {
             }
             // 根据body的数据，重新渲染蛇在页面的位置
             this.snake.render(this.map);
-        }, 100);
+        }, 150);
     }
     // 绑定键盘事件，控制蛇的方向
     bindKey() {
