@@ -19,9 +19,9 @@ class Food {
         this.remove();
         // 随机设置x、y值
 
-        this.x = getRandom(0, map.offsetWidth / this.width) * this.width;
+        this.x = getRandom(1, map.offsetWidth / this.width - 1) * this.width;
 
-        this.y = getRandom(0, map.offsetHeight / this.height) * this.height;
+        this.y = getRandom(1, map.offsetHeight / this.height - 1) * this.height;
 
         console.log(this.x, this.y);
 

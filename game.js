@@ -42,7 +42,8 @@ class Game {
             // 游戏结束情形1：触碰边界
             var maxX = this.map.offsetWidth / this.snake.width;
             var maxY = this.map.offsetHeight / this.snake.height;
-            if (headX < 0 || headX >= maxX || headY < 0 || headY >= maxY) {
+            if (headX === 0 || headX >= maxX || headY === 0 || headY >= maxY) {
+                console.log(headX, headY)
                 alert("游戏结束");
                 clearInterval(this.timerId);
                 this.restart();
