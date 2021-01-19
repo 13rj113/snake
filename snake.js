@@ -11,9 +11,9 @@ class Snake {
         this.direction = direction;
         // 蛇的身体，初始3节
         this.body = [
-            { x: 3, y: 2, color: 'red' },
-            { x: 2, y: 2, color: 'blue' },
-            { x: 1, y: 2, color: 'blue' },
+            { x: 3, y: 2, color: '#FF0000' },
+            { x: 2, y: 2, color: '#6600FF' },
+            { x: 1, y: 2, color: '#6600FF' },
         ]
         this.directionTemp = 'right';
     }

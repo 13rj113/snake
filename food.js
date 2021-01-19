@@ -2,7 +2,7 @@ import { getRandom } from './util.js'
 // 食物类
 class Food {
     // 构造器
-    constructor({ x = 10, y = 10, width = 20, height = 20, color = 'green' } = {}) {
+    constructor({ x = 10, y = 10, width = 20, height = 20, color = '#00FF00' } = {}) {
         // 存储食物
         this.elements = [];
         // 坐标
