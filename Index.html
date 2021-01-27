@@ -8,8 +8,14 @@
 </head>
 
 <body>
-    <div id="map" style="width:500px;height:500px;border: 2px solid #FFFF00;margin-left: 10px;margin-top: 20px;">
+    <div id="map" style="width:500px;height:300px;border: 2px solid #FFFF00;margin-left: 10px;margin-top: 20px;">
     </div>
+    <div style="margin-left: 10px;margin-top: 10px;">
+        <p id="score" style="color:#6600FF;font-size: 20px; font-weight: 700;margin-bottom: 5px;"></p>
+        <button id="btnStart">启 动（Enter键）</button>
+        <button id="btnStop" style="margin-left: 10px;">暂 停（Shift键）</button>
+    </div>
+
     <script type="module">
         import Game from './game.js';
         let map = document.getElementById('map');

@@ -2,20 +2,26 @@ import Food from './food.js'
 // 蛇类
 class Snake {
     // 构造器
-    constructor({ width = 20, height = 20, direction = 'right' } = {}) {
+    constructor({ width = 20, height = 20, direction = 'right', speed = 150 } = {}) {
         // 存储蛇
         this.elements = [];
 
         this.width = width;
         this.height = height;
         this.direction = direction;
+        this.speed = speed;
         // 蛇的身体，初始3节
         this.body = [
             { x: 3, y: 2, color: '#FF0000' },
             { x: 2, y: 2, color: '#6600FF' },
             { x: 1, y: 2, color: '#6600FF' },
         ]
+        // 初始移动方向
         this.directionTemp = 'right';
+        // 起始分数
+        this.score = 0;
+        this.scoreArr = [5, 10, 15, 20, 25];
+        // this.scoreArr = [1, 2, 3, 4, 5];
     }
 
     // 将蛇显示在屏幕上
@@ -108,6 +114,14 @@ class Snake {
             });
             // 重新生成一个食物
             food.render(map);
+            this.score += 1;
+            document.getElementById("score").innerHTML = "当前得分：" + this.score;
+
+            let temp = this.scoreArr.indexOf(this.score)
+            if (temp != -1) {
+                this.speed = 150 - 10 * (temp + 1);
+                console.log("速度增加了！当前速度：" + this.speed)
+            }
         }
     }
 
