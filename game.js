@@ -12,9 +12,9 @@ class Game {
 
     }
     start() {
-        // 将食物和蛇渲染到地图上
-        this.food.render(this.map);
+        // 将蛇和食物渲染到地图上
         this.snake.render(this.map);
+        this.food.render(this.map, this.snake);
         // this.runSnake();
         this.bindKey();
         this.keyCode = 39;

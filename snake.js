@@ -20,7 +20,7 @@ class Snake {
         this.directionTemp = 'right';
         // 起始分数
         this.score = 0;
-        this.scoreArr = [5, 10, 15, 20, 25];
+        this.scoreArr = [50, 100, 150, 200, 250];
         // this.scoreArr = [1, 2, 3, 4, 5];
     }
 
@@ -113,7 +113,7 @@ class Snake {
                 color: last.color
             });
             // 重新生成一个食物
-            food.render(map);
+            food.render(map, this);
             this.score += 1;
             document.getElementById("score").innerHTML = "当前得分：" + this.score;
 

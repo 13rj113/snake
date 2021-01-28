@@ -15,15 +15,29 @@ class Food {
     }
 
     // 将food显示在屏幕上
-    render(map) {
+    render(map, snake) {
+        // 删除之前创建的食物
         this.remove();
-        // 随机设置x、y值
-
-        this.x = getRandom(1, map.offsetWidth / this.width - 1) * this.width;
-
-        this.y = getRandom(1, map.offsetHeight / this.height - 1) * this.height;
-
-        console.log(this.x, this.y);
+        let flag = 0;
+        // 随机设置x、y值（如果位置与蛇身重叠，则重新随机获取）
+        do {
+            let temp = 0;
+            this.x = getRandom(1, map.offsetWidth / this.width - 1) * this.width;
+            this.y = getRandom(1, map.offsetHeight / this.height - 1) * this.height;
+            for (let i = 0; i < snake.body.length; i++) {
+                if (snake.body[i].x * this.width == this.x && snake.body[i].y * this.height == this.y) {
+                    temp = 1;
+                    console.log("食物与蛇重叠啦！")
+                    break;
+                }
+            }
+            if (temp === 1) {
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+        } while (flag === 1)
+        // console.log(this.x, this.y);
 
         // 创建食物 dom
         let div = document.createElement('div');
